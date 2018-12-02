@@ -9,7 +9,9 @@ from DioFramework.Base.Processor.Components.MessageProcessor.MessageWriter impor
 from DioSpider.OldSpider.Boss.BossJobSpider import BossJobSpider
 from DioSpider.OldSpider.Boss.BossSearchSpider import BossSearchSpider
 
-if __name__ == '__main__':
+
+def main():
+    enterUrl = "https://www.zhipin.com/c101280100/?query=%E7%88%AC%E8%99%AB&period=3&ka=sel-scale-3"
     logging.basicConfig(level=logging.INFO)
     cfg = {
         "id": -1,
@@ -19,13 +21,12 @@ if __name__ == '__main__':
         }
     }
     writer = MessageMongodbWriter(config=cfg)
-
-    enterUrl = "https://www.zhipin.com/c101280100/?query=%E7%88%AC%E8%99%AB&period=3&ka=sel-scale-3"
     job = Job()
     job.id = "boss_crawl_dali"
-
-    result = []
     msgs = BossSearchSpider().crawl(enterUrl, {})
-
     for msg in msgs:
         writer.run(job, list(BossJobSpider().crawl(msg.getEnterUrl(), {})))
+
+
+if __name__ == '__main__':
+    main()

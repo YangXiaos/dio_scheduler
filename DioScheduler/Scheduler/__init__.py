@@ -16,6 +16,7 @@ class SchedulerV1(object):
     def __init__(self, id: str, call: typing.Callable):
         self.call = call
 
+
     def execute(self):
         """执行调度"""
 
