@@ -11,5 +11,5 @@ setup(
     description="dio 调度程序",
     author="dio_mryang",
     url="https://github.com/YangXiaos/",
-    packages=find_packages(), install_requires=[]
+    packages=find_packages(), install_requires=['schedule']
 )

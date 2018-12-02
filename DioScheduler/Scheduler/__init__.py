@@ -5,7 +5,7 @@
 import typing
 
 
-class Scheduler(object):
+class SchedulerV1(object):
     """
     {
         "id": "",
