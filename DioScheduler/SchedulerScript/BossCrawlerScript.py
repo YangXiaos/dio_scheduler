@@ -4,11 +4,6 @@
 # @Description  :
 import logging
 import traceback
-
-logging.basicConfig(level=logging.INFO,
-                    format='[%(levelname)s] : [%(asctime)s] : %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S',
-                    filename='/home/mryang/Project/dio_scheduler/test.log')
 import time
 
 import schedule
@@ -17,7 +12,10 @@ from DioFramework.Base.Processor.Components.MessageProcessor.MessageWriter impor
 from DioSpider.OldSpider.Boss.BossJobSpider import BossJobSpider
 from DioSpider.OldSpider.Boss.BossSearchSpider import BossSearchSpider
 
-
+logging.basicConfig(level=logging.INFO,
+                    format='[%(levelname)s] : [%(asctime)s] : %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S',
+                    filename='/home/mryang/Project/dio_scheduler/test.log')
 
 
 # 入口url
