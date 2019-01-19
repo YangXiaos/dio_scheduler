@@ -15,7 +15,7 @@ from DioSpider.OldSpider.Boss.BossSearchSpider import BossSearchSpider
 logging.basicConfig(level=logging.INFO,
                     format='[%(levelname)s] : [%(asctime)s] : %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
-                    filename='/home/mryang/Project/dio_scheduler/test.log')
+                    filename='/root/log/boss.log')
 
 
 # 入口url
